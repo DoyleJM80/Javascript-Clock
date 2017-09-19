@@ -7,6 +7,7 @@
     let secondHand = document.querySelector('.second-hand');
     let minuteHand = document.querySelector('.min-hand');
     let hourHand = document.querySelector('.hour-hand');
+    let audio = new Audio('./sounds/tink.wav');
     
     function setDate() {
         let now = new Date();
@@ -21,5 +22,10 @@
         hourHand.style.transform = `rotate(${hoursDegrees}deg)`;   
     }
 
+    function playAudio() {
+        audio.play();
+    }
+
     setInterval(setDate, 1000);
+    setInterval(playAudio, 1000);
 }());
